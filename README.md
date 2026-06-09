@@ -16,32 +16,34 @@ An AI-powered e-commerce assistant that combines conversational AI, Retrieval-Au
 
 ## 🚀 Live Demo
 
-**Application:**
+### Application
+
 https://santhosh11042007-shoppyai.hf.space
 
-**Hugging Face Space:**
+### Hugging Face Space
+
 https://huggingface.co/spaces/santhosh11042007/shoppyai
 
 ---
 
-## Project Overview
+## Overview
 
-Shoppy AI explores how Large Language Models can be integrated into real-world business workflows.
+Shoppy AI explores how Large Language Models can be integrated with traditional software systems.
 
-Instead of acting as a standalone chatbot, the assistant interacts with structured product and order data while leveraging AI reasoning to answer customer questions and provide support.
+Instead of functioning as a standalone chatbot, the assistant interacts with structured business data stored in a database while leveraging AI reasoning to answer customer questions and support common e-commerce workflows.
 
 Users can:
 
 * Browse products
-* Place simulated orders
+* Place orders
 * Track deliveries
 * Ask support questions
-* Retrieve company policy information
+* Retrieve policy information
 * Interact using natural language
 
 ---
 
-## System Architecture
+## Architecture
 
 ```text
 User
@@ -52,18 +54,22 @@ Gradio Interface
  ▼
 Application Layer
  │
- ├── Product Management
+ ├── Product Catalog
+ ├── Order Management
  ├── Order Tracking
- ├── Knowledge Retrieval
+ ├── Policy Retrieval
  │
  ▼
 SQLite Database
  │
  ▼
-RAG Context Builder
+Context Retrieval Layer
  │
  ▼
-Llama 3.3 70B (SambaNova)
+SambaNova API
+ │
+ ▼
+Meta Llama 3.3 70B Instruct
 ```
 
 ---
@@ -89,85 +95,126 @@ Llama 3.3 70B (SambaNova)
 * SambaNova API
 * Meta Llama 3.3 70B Instruct
 
-### Deployment & DevOps
+### DevOps
 
+* GitHub
 * GitHub Actions
 * Hugging Face Spaces
-* Secret Management using Environment Variables
+* Environment Variables & Secrets
 
 ---
 
-## Engineering Journey
+## Features
 
-This project was built to understand how modern AI systems are engineered beyond simple prompting.
+### Product Discovery
 
-Key areas explored include:
+Browse available products through a simple interactive interface.
 
-* Conversational AI design
-* LLM integration
-* Retrieval-Augmented Generation
-* Database-driven applications
-* Prompt engineering
-* API integration
-* CI/CD automation
-* Cloud deployment workflows
-* Secure credential management
+### Order Placement
 
-A major objective was learning how structured business operations and large language models can work together within a production-style application architecture.
-
----
-
-## Example Commands
-
-### Purchase a Product
+Example:
 
 ```text
 buy headphones
 ```
 
-### Track an Order
+### Order Tracking
+
+Example:
 
 ```text
 track 102345
 ```
 
-### Ask a Support Question
+### Customer Support
+
+Example:
 
 ```text
 What is your return policy?
 ```
 
+The assistant retrieves relevant policy information before generating a response.
+
 ---
 
-## Key Learnings
+## Engineering Journey
 
-* Building AI applications requires more than model calls.
-* Structured data and LLMs complement each other.
-* RAG improves reliability by grounding responses in business knowledge.
-* Deployment pipelines are essential for maintaining production applications.
-* Secret management should always be handled through environment variables rather than hardcoded credentials.
+This project was built to understand how production AI applications combine traditional software engineering with modern language models.
+
+Key concepts explored:
+
+* Conversational AI design
+* LLM integration
+* Retrieval-Augmented Generation
+* Database-backed AI applications
+* Prompt engineering
+* API integration
+* CI/CD automation
+* Deployment workflows
+* Secure secret management
+
+The focus was not only on generating responses but on building an application where AI interacts with structured business operations such as ordering, tracking, and customer support.
+
+---
+
+## Project Structure
+
+```text
+.
+├── app.py
+├── requirements.txt
+├── README.md
+├── shoppy_ai.db
+└── .github
+    └── workflows
+        └── deploy.yml
+```
 
 ---
 
 ## Future Improvements
 
 * Vector database integration
-* Semantic search
+* Semantic retrieval
 * Product recommendation engine
 * Multi-agent customer support
 * Analytics dashboard
 * Inventory forecasting
-* Hybrid retrieval architecture
+* Hybrid search architecture
+
+---
+
+## Deployment
+
+This project is automatically deployed using GitHub Actions.
+
+Workflow:
+
+```text
+GitHub
+   │
+   ▼
+GitHub Actions
+   │
+   ▼
+Hugging Face Spaces
+   │
+   ▼
+Live Application
+```
+
+Every push to the main branch automatically updates the deployed application.
 
 ---
 
 ## Author
 
-Built as part of a hands-on AI engineering journey focused on:
+Built as part of a practical AI engineering journey focused on:
 
 * Large Language Models
 * Retrieval-Augmented Generation
 * AI Application Development
-* MLOps & Deployment
+* MLOps
 * Production AI Systems
 * Full-Stack AI Engineering
