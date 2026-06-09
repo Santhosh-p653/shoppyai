@@ -13,69 +13,61 @@ pinned: false
 
 An AI-powered e-commerce assistant built with Gradio and modern NLP techniques.
 
+## 🔗 Live Demo
+
+👉 https://huggingface.co/spaces/santhosh11042007/shoppyai
+
 ## Overview
 
-Shoppy AI helps users discover, compare, and understand products using natural language queries. It is designed as a lightweight AI assistant that can be extended into a full recommendation or RAG-based shopping system.
+Shoppy AI helps users discover, compare, and understand products using natural language queries. It is designed as a lightweight AI assistant that can later scale into a full RAG-based recommendation system.
 
 ## Core Capabilities
 
-- Natural language product search
-- Intelligent product suggestions
-- Context-aware responses
-- Extensible backend for RAG pipelines
-- Ready for integration with vector databases and LLM APIs
+- Natural language product search  
+- Intelligent product suggestions  
+- Context-aware responses  
+- Extensible backend for RAG pipelines  
+- Ready for vector database integration  
 
-## System Architecture (High-Level)
+## System Architecture
 
-The application follows a simple but scalable architecture:
+- **UI Layer**: Gradio interface (`app.py`)
+- **Logic Layer**: Python backend processing
+- **AI Layer**: LLM API or local transformer models
+- **Data Layer (optional)**: SQLite / FAISS / ChromaDB
 
-- **Frontend Layer**: Gradio UI for user interaction
-- **Application Layer**: Python logic in `app.py`
-- **AI Layer**: LLM API (OpenAI-compatible or local models)
-- **Data Layer (optional extension)**: SQLite / vector DB (FAISS, Chroma)
+## Execution Flow
 
-## How It Works (Engineering View)
+1. User submits query in UI  
+2. Request is handled by `app.py`  
+3. Prompt optionally enriched (RAG-ready design)  
+4. LLM generates response  
+5. Output rendered in Gradio UI  
 
-1. User enters a query in Gradio UI  
-2. Request is processed in `app.py`  
-3. Prompt is optionally enriched (RAG-ready design)  
-4. LLM generates structured response  
-5. Response is rendered in UI
-
-This design keeps inference stateless and horizontally scalable.
-
-## Future Enhancements
+## Future Upgrades
 
 - Add vector database (FAISS / ChromaDB)
-- Implement retrieval-augmented generation (RAG)
-- Add caching layer for frequent queries
-- Introduce async inference pipeline
-- Deploy with Docker + HF Spaces GPU runtime
+- Implement full RAG pipeline
+- Add async inference layer
+- Introduce caching for repeated queries
+- Deploy with Docker-based HF Space
 
 ## Tech Stack
 
-- Python
-- Gradio
-- Transformers / LLM API
-- SQLite (optional)
-- Hugging Face Spaces
-
-## Deployment Notes
-
-This project is configured for Hugging Face Spaces deployment. Ensure:
-
-- `app.py` contains the Gradio entrypoint
-- `requirements.txt` includes all dependencies
-- No invalid YAML exists in this file
+- Python  
+- Gradio  
+- Transformers / LLM APIs  
+- Hugging Face Spaces  
 
 ---
 
-## Learning Focus
+## Engineering Insight
 
-This project is a stepping stone toward production AI systems involving:
+This project is intentionally structured to evolve from:
+> simple LLM wrapper → production-grade AI retrieval system
 
-- LLM integration patterns
-- Prompt orchestration
-- Retrieval systems (RAG)
+Key learning areas:
+- prompt orchestration
 - API-based inference design
-- Scalable AI application architecture
+- scalable AI system architecture
+- modular backend design for AI apps
