@@ -1,5 +1,4 @@
 ---
-
 title: Shoppy AI
 emoji: 🛒
 colorFrom: blue
@@ -8,213 +7,75 @@ sdk: gradio
 sdk_version: "5.34.2"
 app_file: app.py
 pinned: false
--------------
+---
 
 # Shoppy AI 🛒
 
-An AI-powered e-commerce assistant that combines conversational AI, Retrieval-Augmented Generation (RAG), order management, and customer support into a single interactive application.
-
-## 🚀 Live Demo
-
-### Application
-
-https://santhosh11042007-shoppyai.hf.space
-
-### Hugging Face Space
-
-https://huggingface.co/spaces/santhosh11042007/shoppyai
-
----
+An AI-powered e-commerce assistant built with Gradio and modern NLP techniques.
 
 ## Overview
 
-Shoppy AI explores how Large Language Models can be integrated with traditional software systems.
+Shoppy AI helps users discover, compare, and understand products using natural language queries. It is designed as a lightweight AI assistant that can be extended into a full recommendation or RAG-based shopping system.
 
-Instead of functioning as a standalone chatbot, the assistant interacts with structured business data stored in a database while leveraging AI reasoning to answer customer questions and support common e-commerce workflows.
+## Core Capabilities
 
-Users can:
+- Natural language product search
+- Intelligent product suggestions
+- Context-aware responses
+- Extensible backend for RAG pipelines
+- Ready for integration with vector databases and LLM APIs
 
-* Browse products
-* Place orders
-* Track deliveries
-* Ask support questions
-* Retrieve policy information
-* Interact using natural language
+## System Architecture (High-Level)
 
----
+The application follows a simple but scalable architecture:
 
-## Architecture
+- **Frontend Layer**: Gradio UI for user interaction
+- **Application Layer**: Python logic in `app.py`
+- **AI Layer**: LLM API (OpenAI-compatible or local models)
+- **Data Layer (optional extension)**: SQLite / vector DB (FAISS, Chroma)
 
-```text
-User
- │
- ▼
-Gradio Interface
- │
- ▼
-Application Layer
- │
- ├── Product Catalog
- ├── Order Management
- ├── Order Tracking
- ├── Policy Retrieval
- │
- ▼
-SQLite Database
- │
- ▼
-Context Retrieval Layer
- │
- ▼
-SambaNova API
- │
- ▼
-Meta Llama 3.3 70B Instruct
-```
+## How It Works (Engineering View)
 
----
+1. User enters a query in Gradio UI  
+2. Request is processed in `app.py`  
+3. Prompt is optionally enriched (RAG-ready design)  
+4. LLM generates structured response  
+5. Response is rendered in UI
 
-## Technology Stack
+This design keeps inference stateless and horizontally scalable.
 
-### Frontend
+## Future Enhancements
 
-* Gradio
+- Add vector database (FAISS / ChromaDB)
+- Implement retrieval-augmented generation (RAG)
+- Add caching layer for frequent queries
+- Introduce async inference pipeline
+- Deploy with Docker + HF Spaces GPU runtime
 
-### Backend
+## Tech Stack
 
-* Python
-* SQLAlchemy
+- Python
+- Gradio
+- Transformers / LLM API
+- SQLite (optional)
+- Hugging Face Spaces
 
-### Database
+## Deployment Notes
 
-* SQLite
+This project is configured for Hugging Face Spaces deployment. Ensure:
 
-### AI Components
-
-* Retrieval-Augmented Generation (RAG)
-* SambaNova API
-* Meta Llama 3.3 70B Instruct
-
-### DevOps
-
-* GitHub
-* GitHub Actions
-* Hugging Face Spaces
-* Environment Variables & Secrets
+- `app.py` contains the Gradio entrypoint
+- `requirements.txt` includes all dependencies
+- No invalid YAML exists in this file
 
 ---
 
-## Features
+## Learning Focus
 
-### Product Discovery
+This project is a stepping stone toward production AI systems involving:
 
-Browse available products through a simple interactive interface.
-
-### Order Placement
-
-Example:
-
-```text
-buy headphones
-```
-
-### Order Tracking
-
-Example:
-
-```text
-track 102345
-```
-
-### Customer Support
-
-Example:
-
-```text
-What is your return policy?
-```
-
-The assistant retrieves relevant policy information before generating a response.
-
----
-
-## Engineering Journey
-
-This project was built to understand how production AI applications combine traditional software engineering with modern language models.
-
-Key concepts explored:
-
-* Conversational AI design
-* LLM integration
-* Retrieval-Augmented Generation
-* Database-backed AI applications
-* Prompt engineering
-* API integration
-* CI/CD automation
-* Deployment workflows
-* Secure secret management
-
-The focus was not only on generating responses but on building an application where AI interacts with structured business operations such as ordering, tracking, and customer support.
-
----
-
-## Project Structure
-
-```text
-.
-├── app.py
-├── requirements.txt
-├── README.md
-├── shoppy_ai.db
-└── .github
-    └── workflows
-        └── deploy.yml
-```
-
----
-
-## Future Improvements
-
-* Vector database integration
-* Semantic retrieval
-* Product recommendation engine
-* Multi-agent customer support
-* Analytics dashboard
-* Inventory forecasting
-* Hybrid search architecture
-
----
-
-## Deployment
-
-This project is automatically deployed using GitHub Actions.
-
-Workflow:
-
-```text
-GitHub
-   │
-   ▼
-GitHub Actions
-   │
-   ▼
-Hugging Face Spaces
-   │
-   ▼
-Live Application
-```
-
-Every push to the main branch automatically updates the deployed application.
-
----
-
-## Author
-
-Built as part of a practical AI engineering journey focused on:
-
-* Large Language Models
-* Retrieval-Augmented Generation
-* AI Application Development
-* MLOps
-* Production AI Systems
-* Full-Stack AI Engineering
+- LLM integration patterns
+- Prompt orchestration
+- Retrieval systems (RAG)
+- API-based inference design
+- Scalable AI application architecture
