@@ -1,0 +1,4 @@
+gradio 
+sqlalchemy 
+openai 
+pandas
