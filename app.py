@@ -394,4 +394,4 @@ with gr.Blocks(theme=gr.themes.Soft(), css=CSS) as demo:
             msg.submit(respond, [msg, chatbot], [msg, chatbot])
             clear.click(lambda: [], outputs=chatbot)
 
-demo.launch(share=True, debug=True)
+demo.launch()
